@@ -2,9 +2,8 @@
 import scrapy
 
 
-class CorporateannouncementSpider(scrapy.Spider):
+class CorporateAnnouncementSpider(scrapy.Spider):
     name = 'CorporateAnnouncement'
-    allowed_domains = ['www.nseindia.com']
     start_urls = ['http://www.nseindia.com/']
 
     def parse(self, response):
