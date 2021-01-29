@@ -32,3 +32,4 @@ class Annoucement(scrapy.Item):
     csvName = scrapy.Field()
     exchdisstime = scrapy.Field()
     difference = scrapy.Field()
+    isProcessed = scrapy.Field()

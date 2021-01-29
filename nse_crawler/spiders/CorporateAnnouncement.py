@@ -56,6 +56,7 @@ class CorporateAnnouncementSpider(scrapy.Spider):
                 annoucement_item['csvName'] = announcement.get('csvName')
                 annoucement_item['exchdisstime'] = announcement.get('exchdisstime')
                 annoucement_item['difference'] = announcement.get('difference')
+                annoucement_item["isProcessed"] = 0
                 yield annoucement_item
 
         yield scrapy.Request(
