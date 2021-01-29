@@ -19,7 +19,9 @@ class NseCrawlerPipeline:
     def open_spider(self, spider):
         logging.info("Initializing the mongo DB Client")
         self.client = pymongo.MongoClient(
-            "mongodb://hello:hello@127.0.0.1:27017/?authSource=admin&authMechanism=SCRAM-SHA-256")
+            "mongodb://"+os.get("USERNAME")+":"+os.get("PASSWORD")+"@localhost:"+os.get("PORT")+"/?authSource=admin"
+                                                                                                "&authMechanism=SCRAM"
+                                                                                                "-SHA-256")
         self.db = self.client['nse_crawler']
 
     def process_item(self, item, spider):
