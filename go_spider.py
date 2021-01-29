@@ -11,6 +11,9 @@ if os.getenv("USERNAME") is None:
     raise Exception("Username not found in")
 if os.getenv("PASSWORD") is None:
     raise Exception("Password not found")
+if os.getenv("NETWORK") is None:
+    raise Exception("Network not found")
+
 
 process = CrawlerProcess(get_project_settings())
 process.crawl(CorporateAnnouncementSpider)
